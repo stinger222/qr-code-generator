@@ -5,12 +5,43 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600;800&display=swap" rel="stylesheet">
+
 	
-	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: {
+						baloo: "'Baloo Tamma 2', cursive"
+					}
+				}
+			}
+		}
+	</script>
 	<script src="script.js" defer></script>
 </head>
-<body>
+
+<body class="font-baloo">
+	<header class="bg-sky-500 p-4 mb-16">
+		<div class="max-w-5xl m-auto">
+			<div class="text-white font-semibold text-xl">QR Code Generator</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="flex flex-col p-8 m-auto max-w-4xl md:flex-row-reverse">
+			<div class="w-full mb-8 sm:max-w-1/3">
+				<img class="w-1/2 m-auto sm:max-w-2/3"src="./img/qr-code.png">
+			</div>
+			<div class="w-full">
+				<h1 class="text-4xl font-bold mb-3">QR Code Generator</h1>
+				<p class="mb-4 text-xl">QR Codes allow you to squeeze any text you want and access it whenever you need it using your phone.</p>
+				<p class="text-xl">Enter text or URL to generate QR code and download the image. </p>
+			</div>
+		</div>
+	</main>
 </body>
 </html>
