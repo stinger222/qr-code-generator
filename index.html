@@ -25,14 +25,14 @@
 </head>
 
 <body class="font-baloo">
-	<header class="bg-sky-500 p-4 mb-16">
+	<header class="bg-sky-500 p-4 mb-10">
 		<div class="max-w-5xl m-auto">
 			<div class="text-white font-semibold text-xl">QR Code Generator</div>
 		</div>
 	</header>
 
-	<main>
-		<div class="flex flex-col items-center p-8 m-auto max-w-4xl md:flex-row-reverse">
+	<main class=" p-8">
+		<div class="flex flex-col items-center m-auto max-w-4xl md:flex-row-reverse">
 			<div class="w-full mb-8 md:w-1/3">
 				<img class="w-1/2 m-auto md:w-full" src="./img/qr-code.png">
 			</div>
@@ -40,25 +40,30 @@
 				<h1 class="text-4xl font-bold mb-3">QR Code Generator</h1>
 				<p class="mb-4 text-xl">QR Codes allow you to squeeze any text you want and access it whenever you need it using your phone.</p>
 				<p class="text-xl">Enter text or URL to generate QR code and download the image. </p>
-				 <form class="mt-5" id="qr-generator">
-					<input
-						class="w-full border-2 border-gray-300 rounded focus:outline-none text-lg p-3 mb-3"
-						placeholder="Text to encode"
-						id="input_text"
-					>
-					<select class="w-full border-2 border-gray-300 rounded focus:outline-none text-lg mb-3 p-3">
-						<option value="100">100x100</option>
-						<option value="200">200x200</option>
-						<option value="300">300x300</option>
-						<option value="400">400x400</option>
-						<option selected value="500">500x500</option>
-						<option value="700">700x700</option>
-						<option value="1000">1000x1000</option>
-					</select>
-					<button class="w-full bg-gray-700 align-center text-white rounded p-3 active:scale-95">Download Code</button>
-				 </form>
+        <form class="mt-5" id="qr-form">
+          <input
+            class="w-full border-2 border-gray-300 rounded focus:outline-none text-lg p-3 mb-3"
+            placeholder="Text to encode"
+            name="qr-input"
+          >
+          <select name="qr-size" class="w-full border-2 border-gray-300 rounded focus:outline-none text-lg mb-3 p-3">
+            <option value="100">100x100</option>
+            <option selected value="200">200x200</option>
+            <option value="300">300x300</option>
+            <option value="400">400x400</option>
+            <option  value="500">500x500</option>
+            <option value="700">700x700</option>
+            <option value="1000">1000x1000</option>
+          </select>
+          <button class="w-full bg-gray-700 align-center text-white rounded p-3 active:scale-95"> > Generate Code < </button>
+        </form>
 			</div>
 		</div>
+
+    <div id="qr-output" class="flex flex-col align-center w-fit mx-auto mt-6"></div>
+    <div id="qr-download-link" class="w-full flex justify-center">
+
+    </div>
 	</main>
 </body>
 </html>
